@@ -38,15 +38,9 @@ Exemple d'entrée:
 
  */
 
-function searchWordFilter(items, search) {
-  let tableau = items.filter(function(item, mot){
-      mot = search;
-      mot = mot.toLowerCase();
-      item = item.toLowerCase();
-      item = item.split(" ");
-      if (item.includes(mot) == true) {item = item.join(" "); return item;}
-  })
-  return tableau;
+const searchWordFilter = (items, search) =>
+  items.filter(item => item.toLowerCase().indexOf(search) >= 0);
+
 
 
 // Ne pas modifier l'export
